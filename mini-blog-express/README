@@ -1,0 +1,127 @@
+# 🌿 CleanLife Blog
+
+A professional, SEO-friendly blog application built with Node.js and Express, showcasing expert content on air quality and water filtration solutions.
+
+## ✨ Features
+
+- **📄 Clean URL Slugs** - SEO-friendly routes for better search engine optimization
+- **🔍 Dynamic Meta Tags** - Automatic page titles and descriptions for each article
+- **🎨 Modern, Responsive Design** - Professional styling with gradient effects and smooth animations
+- **⚡ Server-Side Rendering** - Fast page loads with EJS templating
+- **📱 Mobile Optimized** - Fully responsive design for all devices
+- **🎯 Professional UX** - Hover effects, smooth transitions, and intuitive navigation
+
+## 🛠️ Tech Stack
+
+- **Node.js** - JavaScript runtime
+- **Express.js** - Web application framework
+- **EJS** - Template engine for server-side rendering
+- **CSS3** - Modern styling with gradients and animations
+- **JSON** - Data storage for articles
+
+## 📁 Project Structure
+
+```
+mini-blog-express/
+├── app.js                 # Main application file
+├── package.json          # Dependencies
+├── public/
+│   └── css/
+│       └── style.css     # Professional styling
+├── routes/
+│   └── posts.js          # Route handlers
+├── views/
+│   ├── layout.ejs        # Main template layout
+│   ├── index.ejs         # Blog homepage
+│   └── posts.ejs         # Individual article page
+└── data/
+    └── posts.json        # Article data
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v12 or higher)
+- npm (comes with Node.js)
+
+### Installation
+
+1. Clone or download the project
+2. Navigate to the project directory
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Application
+
+Start the development server:
+```bash
+npm start
+```
+
+The blog will be available at `http://localhost:3000`
+
+## 📚 Adding Articles
+
+Edit `data/posts.json` to add new articles:
+
+```json
+{
+  "title": "Article Title",
+  "slug": "article-url-slug",
+  "summary": "Brief article summary",
+  "content": "Full article content"
+}
+```
+
+## 🎯 Features Explained
+
+### SEO Optimization
+- Dynamic `<title>` tags for each page
+- Descriptive `<meta>` tags for search engines
+- Clean, semantic HTML structure
+- Mobile-friendly viewport configuration
+
+### Modern Design
+- Gradient backgrounds and button effects
+- Smooth hover animations
+- Card-based layout for articles
+- Professional color scheme
+- Responsive grid system
+
+### User Experience
+- Clear navigation with breadcrumbs
+- "Read More" buttons with visual indicators
+- Back-to-home navigation on article pages
+- Professional typography and spacing
+
+## 🔧 Development
+
+### File Modifications
+
+**To change the blog title:** Edit the header in `views/layout.ejs`
+
+**To modify styles:** Edit `public/css/style.css`
+
+**To add new routes:** Edit `routes/posts.js`
+
+**To update article content:** Edit `data/posts.json`
+
+## 📝 License
+
+This project is open source and available for educational purposes.
+
+## 💡 Future Enhancements
+
+- Author information on articles
+- Reading time estimates
+- Search functionality
+- Article categories/tags
+- Comments section
+- Pagination for large article lists
+- Admin dashboard for content management
+
+---
+
+Built with ❤️ for CleanLife Blog

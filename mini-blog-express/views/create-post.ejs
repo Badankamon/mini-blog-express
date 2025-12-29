@@ -1,0 +1,79 @@
+<div style="max-width: 750px; margin: 0 auto;">
+  <div class="blog-header">
+    <h2>✍️ Create Your Own Post</h2>
+    <p>Share your knowledge and experiences about air quality, water filtration, and healthy living</p>
+  </div>
+
+  <% if (typeof error !== 'undefined' && error) { %>
+    <div class="error-message">
+      <strong>⚠️ Error:</strong> <%= error %>
+    </div>
+  <% } %>
+
+  <form method="POST" action="/create-post">
+    <div>
+      <label for="title">Post Title *</label>
+      <input 
+        type="text" 
+        id="title" 
+        name="title" 
+        required
+        placeholder="Enter an engaging title for your post"
+      >
+      <small>5-200 characters</small>
+    </div>
+
+    <div>
+      <label for="author">Your Name *</label>
+      <input 
+        type="text" 
+        id="author" 
+        name="author" 
+        required
+        placeholder="How would you like to be credited?"
+      >
+    </div>
+
+    <div>
+      <label for="content">Your Post Content *</label>
+      <textarea 
+        id="content" 
+        name="content" 
+        required
+        placeholder="Share your insights, tips, and experiences here... (minimum 20 characters)"
+      ></textarea>
+      <small>Minimum 20 characters</small>
+    </div>
+
+    <div>
+      <label for="tags">Tags (optional)</label>
+      <input 
+        type="text" 
+        id="tags" 
+        name="tags" 
+        placeholder="e.g., air-quality, health, filtration (comma-separated)"
+      >
+      <small>Enter comma-separated tags to categorize your post</small>
+    </div>
+
+    <div style="display: flex; gap: 1rem;">
+      <button type="submit" class="btn btn-success" style="flex: 1;">
+        📤 Publish Post
+      </button>
+      <a href="/" class="btn btn-secondary" style="flex: 1; text-align: center;">
+        Cancel
+      </a>
+    </div>
+  </form>
+
+  <div class="info-box">
+    <h3>💡 Tips for a Great Post:</h3>
+    <ul>
+      <li>Choose a clear, descriptive title that captures the essence</li>
+      <li>Share real experiences and practical, actionable advice</li>
+      <li>Be concise but informative and engaging</li>
+      <li>Focus on air quality, water filtration, or healthy living topics</li>
+      <li>Proofread your content before publishing</li>
+    </ul>
+  </div>
+</div>

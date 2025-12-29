@@ -1,0 +1,57 @@
+<article>
+  <h1><%= post.title %></h1>
+  
+  <div class="article-meta">
+    <% if (post.isUserPost) { %>
+      <span>✍️ By <strong><%= post.author %></strong></span>
+    <% } %>
+    <span>📅 <%= post.date ? new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : 'December 29, 2025' %></span>
+    <span>⏱️ 5 min read</span>
+  </div>
+  
+  <div class="article-content">
+    <%= post.content %>
+  </div>
+
+  <% if (post.tags && post.tags.length > 0) { %>
+    <div style="margin-top: 2rem; padding: 1.5rem; background: #f8fafc; border-radius: 8px; border-left: 4px solid var(--primary);">
+      <strong style="color: #334155;">Tags:</strong>
+      <div class="tags-container" style="margin-top: 0.75rem;">
+        <% post.tags.forEach(tag => { %>
+          <a href="/tag/<%= tag %>" class="tag">#<%= tag.replace(/-/g, ' ') %></a>
+        <% }) %>
+      </div>
+    </div>
+  <% } %>
+
+  <% if (relatedPosts && relatedPosts.length > 0) { %>
+    <section class="related-posts">
+      <h2 style="color: var(--primary); margin-bottom: 1.5rem;">🔗 Related Articles</h2>
+      <div class="related-grid">
+        <% relatedPosts.slice(0, 3).forEach(relPost => { %>
+          <div class="related-card">
+            <h4><a href="/post/<%= relPost.slug %>"><%= relPost.title %></a></h4>
+            <p><%= relPost.summary %></p>
+            <% if (relPost.tags && relPost.tags.length > 0) { %>
+              <div class="tags-container" style="margin-top: 0.75rem; margin-bottom: 0.75rem;">
+                <% relPost.tags.forEach(tag => { %>
+                  <a href="/tag/<%= tag %>" class="tag" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;">#<%= tag %></a>
+                <% }) %>
+              </div>
+            <% } %>
+            <a href="/post/<%= relPost.slug %>" class="btn btn-primary" style="display: inline-block; padding: 0.5rem 1rem; font-size: 0.9rem;">
+              Read More →
+            </a>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+  <% } %>
+
+  <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #e2e8f0;">
+    <a href="/" class="btn btn-primary">← Back to Articles</a>
+    <% if (!post.isUserPost) { %>
+      <a href="/create-post" class="btn btn-success" style="margin-left: 1rem;">✍️ Share Your Thoughts</a>
+    <% } %>
+  </div>
+</article>

@@ -1,0 +1,126 @@
+<section class="blog-header">
+  <h2>📖 About Our Blog</h2>
+  <p>Your trusted source for expert insights on air quality, water filtration, and healthy living</p>
+</section>
+
+<!-- Statistics -->
+<div class="stats-grid" style="margin-bottom: 2rem;">
+  <div class="stat-card">
+    <span class="stat-number"><%= stats.totalPosts %></span>
+    <span class="stat-label">Total Articles</span>
+    <span class="stat-description">Expert-written and community contributed</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-number"><%= stats.officialPosts %></span>
+    <span class="stat-label">Official Articles</span>
+    <span class="stat-description">Written by our expert team</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-number"><%= stats.communityPosts %></span>
+    <span class="stat-label">Community Posts</span>
+    <span class="stat-description">Shared by our readers</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-number"><%= stats.uniqueAuthors %></span>
+    <span class="stat-label">Contributors</span>
+    <span class="stat-description">Experts and community members</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-number"><%= stats.totalTags %></span>
+    <span class="stat-label">Topics Covered</span>
+    <span class="stat-description">Diverse range of subjects</span>
+  </div>
+</div>
+
+<!-- About Content -->
+<div class="about-content">
+  <h3>Our Mission</h3>
+  <p>
+    We're dedicated to providing high-quality, accurate information about air quality, water treatment, and sustainable living. 
+    Our blog combines expert knowledge with community insights to help you make informed decisions about your health and environment.
+  </p>
+
+  <h3>What We Cover</h3>
+  <ul class="features-list">
+    <li>💨 <strong>Air Quality:</strong> Understanding air pollution and how to improve indoor air quality</li>
+    <li>💧 <strong>Water Filtration:</strong> Best practices for clean, safe drinking water</li>
+    <li>🏠 <strong>Healthy Living:</strong> Tips for creating a healthier home environment</li>
+    <li>🔬 <strong>Science & Technology:</strong> Latest advances in environmental tech</li>
+    <li>📚 <strong>How-To Guides:</strong> Step-by-step guides for practical solutions</li>
+    <li>🤝 <strong>Community Stories:</strong> Real experiences from our readers</li>
+  </ul>
+
+  <h3>Why Choose Us?</h3>
+  <ul class="features-list">
+    <li>✅ <strong>Evidence-Based:</strong> All articles are backed by scientific research</li>
+    <li>✅ <strong>Expert Authors:</strong> Written by industry professionals and researchers</li>
+    <li>✅ <strong>Community Driven:</strong> Your experiences and insights matter</li>
+    <li>✅ <strong>Regularly Updated:</strong> Fresh content and latest information</li>
+    <li>✅ <strong>Accessible:</strong> Complex topics explained in simple terms</li>
+    <li>✅ <strong>Practical:</strong> Actionable advice you can implement immediately</li>
+  </ul>
+
+  <h3>Join Our Community</h3>
+  <p>
+    Have insights to share? We invite you to contribute to our blog! Share your experiences, tips, or findings with our community. 
+    Every voice matters, and your story could help someone else live healthier and more sustainably.
+  </p>
+  
+  <div class="button-group" style="margin-top: 2rem;">
+    <a href="/create-post" class="btn btn-success">✍️ Write an Article</a>
+    <a href="/user-posts" class="btn btn-info">👥 Community Posts</a>
+    <a href="/" class="btn btn-primary">📚 All Articles</a>
+  </div>
+</div>
+
+<style>
+  .about-content {
+    max-width: 800px;
+    margin: 2rem auto;
+    line-height: 1.8;
+  }
+
+  .about-content h3 {
+    color: var(--primary);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+  }
+
+  .about-content p {
+    color: #64748b;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+
+  .features-list li {
+    padding: 0.75rem 0;
+    color: #475569;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 1.05rem;
+  }
+
+  .features-list li:last-child {
+    border-bottom: none;
+  }
+
+  .features-list strong {
+    color: var(--primary);
+  }
+
+  .stat-description {
+    display: block;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: 0.5rem;
+    font-weight: 400;
+  }
+</style>

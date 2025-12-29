@@ -1,0 +1,38 @@
+<section class="blog-header">
+  <h2>👥 Community Posts</h2>
+  <p>Read insightful articles shared by our community members</p>
+  
+  <div class="button-group">
+    <a href="/create-post" class="btn btn-success">✍️ Create a Post</a>
+    <a href="/" class="btn btn-primary">← All Articles</a>
+  </div>
+</section>
+
+<% if (posts.length === 0) { %>
+  <div class="empty-state">
+    <h2>👋 No Posts Yet</h2>
+    <p>Be the first to share your knowledge with the community!</p>
+    <a href="/create-post" class="btn btn-success">✍️ Create the First Post</a>
+  </div>
+<% } else { %>
+  <ul>
+    <% posts.forEach((post) => { %>
+      <li>
+        <h3>
+          <a href="/post/<%= post.slug %>">
+            <%= post.title %>
+          </a>
+        </h3>
+        <div class="meta">
+          <span>✍️ By <strong><%= post.author %></strong></span>
+          <span>•</span>
+          <span><%= new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) %></span>
+        </div>
+        <p><%= post.summary %></p>
+        <a href="/post/<%= post.slug %>" class="btn btn-primary" style="margin-top: 1rem; padding: 0.6rem 1.5rem; font-size: 0.9rem;">
+          Read Article →
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+<% } %>

@@ -1,0 +1,104 @@
+<section class="blog-header">
+  <h2>📚 Latest Articles & Stories</h2>
+  <p>Explore expert insights on air quality, water filtration, and healthy living</p>
+  
+  <div class="button-group">
+    <a href="/create-post" class="btn btn-success">✍️ Create a Post</a>
+    <a href="/user-posts" class="btn btn-info">👥 Community Posts</a>
+    <a href="/about" class="btn btn-primary">ℹ️ About</a>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<div class="stats-grid">
+  <div class="stat-card">
+    <span class="stat-number"><%= stats.totalPosts %></span>
+    <span class="stat-label">Total Articles</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-number"><%= stats.communityPosts %></span>
+    <span class="stat-label">Community Posts</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-number"><%= stats.uniqueAuthors %></span>
+    <span class="stat-label">Contributors</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-number"><%= stats.totalTags %></span>
+    <span class="stat-label">Topics</span>
+  </div>
+</div>
+
+<!-- Search Bar -->
+<form method="GET" action="/" class="search-container">
+  <input 
+    type="text" 
+    name="search" 
+    class="search-input"
+    placeholder="🔍 Search articles by title, content or author..."
+    value="<%= searchQuery %>"
+  >
+  <button type="submit" class="btn btn-primary search-btn">Search</button>
+  <% if (searchQuery) { %>
+    <a href="/" class="btn btn-secondary">Clear Search</a>
+  <% } %>
+</form>
+
+<!-- Tags Cloud -->
+<div class="tags-cloud">
+  <h3>🏷️ Topics & Tags</h3>
+  <div class="tags-list">
+    <% allTags.forEach(tag => { %>
+      <a href="/tag/<%= tag %>" class="tag" title="View posts tagged with '<%= tag %>'">
+        #<%= tag.replace(/-/g, ' ') %>
+      </a>
+    <% }) %>
+  </div>
+  <% if (selectedTag) { %>
+    <p style="margin-top: 1rem; color: #94a3b8; font-size: 0.9rem;">
+      Showing <%= posts.length %> article<%= posts.length !== 1 ? 's' : '' %> tagged with <strong>#<%= selectedTag.replace(/-/g, ' ') %></strong>
+    </p>
+  <% } %>
+</div>
+
+<!-- Articles List -->
+<% if (posts.length === 0) { %>
+  <div class="empty-state">
+    <h2>📭 No Articles Found</h2>
+    <p><% if (searchQuery) { %>No articles match your search "<strong><%= searchQuery %></strong>"<% } else if (selectedTag) { %>No articles found with tag "<strong><%= selectedTag %></strong>"<% } else { %>No articles available<% } %></p>
+    <div class="button-group">
+      <a href="/" class="btn btn-primary">View All Articles</a>
+      <a href="/create-post" class="btn btn-success">✍️ Create a Post</a>
+    </div>
+  </div>
+<% } else { %>
+  <ul>
+    <% posts.forEach((post) => { %>
+      <li>
+        <h3>
+          <a href="/post/<%= post.slug %>">
+            <%= post.title %>
+          </a>
+        </h3>
+        <% if (post.isUserPost) { %>
+          <div class="meta">
+            <span>✍️ By <strong><%= post.author %></strong></span>
+            <span>•</span>
+            <span><%= new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) %></span>
+          </div>
+        <% } %>
+        <p><%= post.summary %></p>
+        <% if (post.tags && post.tags.length > 0) { %>
+          <div class="tags-container">
+            <% post.tags.forEach(tag => { %>
+              <a href="/tag/<%= tag %>" class="tag">#<%= tag.replace(/-/g, ' ') %></a>
+            <% }) %>
+          </div>
+        <% } %>
+        <a href="/post/<%= post.slug %>" class="btn btn-primary" style="margin-top: 1rem; padding: 0.6rem 1.5rem; font-size: 0.9rem;">
+          Read Article →
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+<% } %>

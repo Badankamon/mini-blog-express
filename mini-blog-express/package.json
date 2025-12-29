@@ -1,0 +1,14 @@
+{
+  "name": "mini-blog-express",
+  "version": "1.0.0",
+  "description": "SEO-friendly mini blog built with Node.js and Express",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1"
+  }
+}

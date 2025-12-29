@@ -1,0 +1,22 @@
+<article style="text-align: center;">
+  <h1 style="font-size: 4rem; background: linear-gradient(135deg, #ec4899, #f43f5e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem;">
+    404
+  </h1>
+  <h2>Oops! Page Not Found</h2>
+  
+  <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+    Sorry, the article or page you're looking for doesn't exist. 
+    <% if (typeof requestedSlug !== 'undefined') { %>
+      <br><small style="color: #94a3b8;">Looking for: <code style="background: var(--light); padding: 0.25rem 0.5rem; border-radius: 4px;"><%= requestedSlug %></code></small>
+    <% } %>
+  </p>
+
+  <p style="color: var(--text); margin-bottom: 2rem;">
+    Don't worry, you can return to our blog and explore more articles.
+  </p>
+
+  <div class="button-group">
+    <a href="/" class="btn btn-primary">← Back to Blog</a>
+    <a href="/create-post" class="btn btn-success">✍️ Create a Post</a>
+  </div>
+</article>
